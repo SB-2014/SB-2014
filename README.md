@@ -1,12 +1,17 @@
-- 👋 Hi, I’m @SB-2014
-- 👀 I’m interested in ...coding a chess engine
-- 🌱 I’m currently learning ...how to do it
-- 💞️ I’m looking to collaborate on ...this activity with my friends if possible
-- 📫 How to reach me ...I don't know
-- 😄 Pronouns: ...nothing
-- ⚡ Fun fact: ...nothing
+import chess
+import chess.engine
 
-<!---
-SB-2014/SB-2014 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+# Initialize the board
+Board+ chess.Board()
+
+# Initialize the engine
+engine= chess.engine.SimpleEngine.popen_uci("smartfish")
+
+# play a move
+result = engine.play(board, chess.engine.Limit(time=2.))
+
+# Play a move
+print(board)
+
+# Close the engine
+engine.quit()
